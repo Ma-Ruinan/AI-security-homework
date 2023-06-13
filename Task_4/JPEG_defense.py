@@ -43,8 +43,7 @@ transform_test = transforms.Compose([
     transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
 ])
 
-train_set = torchvision.datasets.Mnist(root='./data', split='train', download=True, transform=transform_train)
-test_set = torchvision.datasets.STL10(root='./data', split='test', download=True, transform=transform_test)
+train_set = torchvision.datasets.MNIST(root='./data', split='train', download=True, transform=transform_train)
+test_set = torchvision.datasets.MNIST(root='./data', split='test', download=True, transform=transform_test)
 train_loader = torch.utils.data.DataLoader(train_set, batch_size=64, shuffle=True)
 test_loader = torch.utils.data.DataLoader(test_set, batch_size=64, shuffle=False)
-
